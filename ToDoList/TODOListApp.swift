@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SwiftUI_MVVMApp: App {
+struct TODOList: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
