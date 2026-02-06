@@ -30,9 +30,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		877D7CA82F34C78700FD443E /* SwiftUI_MVVM */ = {
+		877D7CA82F34C78700FD443E /* ToDoList */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SwiftUI_MVVM;
+			path = ToDoList;
 			sourceTree = "<group>";
 		};
 		877D7CB62F34C78800FD443E /* SwiftUI_MVVMTests */ = {
@@ -75,7 +75,7 @@
 		877D7C9D2F34C78700FD443E = {
 			isa = PBXGroup;
 			children = (
-				877D7CA82F34C78700FD443E /* SwiftUI_MVVM */,
+				877D7CA82F34C78700FD443E /* ToDoList */,
 				877D7CB62F34C78800FD443E /* SwiftUI_MVVMTests */,
 				877D7CC02F34C78800FD443E /* SwiftUI_MVVMUITests */,
 				877D7CA72F34C78700FD443E /* Products */,
@@ -108,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				877D7CA82F34C78700FD443E /* SwiftUI_MVVM */,
+				877D7CA82F34C78700FD443E /* ToDoList */,
 			);
 			name = SwiftUI_MVVM;
 			packageProductDependencies = (
