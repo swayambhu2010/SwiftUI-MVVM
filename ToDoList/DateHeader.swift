@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct DateHeader: View {
+    @EnvironmentObject var dateManager: DateManager
+    
     var body: some View {
         makeHeaderView()
     }
     
+    @ViewBuilder
     private func makeHeaderView() -> some View {
         HStack {
             VStack(alignment: .leading) {
@@ -19,7 +22,7 @@ struct DateHeader: View {
                     .font(.title)
                     .fontWeight(.semibold)
                     .padding(4)
-                Text("What's up for today?")
+                Text(dateManager.selectedDate == Calendar.current.startOfDay(for: Date()) ? "What's up for today?" : "planning for future?")
                     .font(.caption)
                     .fontWeight(.light)
                     .padding(4)
@@ -27,11 +30,14 @@ struct DateHeader: View {
             }
             Spacer()
             VStack(alignment: .trailing) {
-                Text("August")
+                Text(dateManager.selectedDate.monthToString())
                     .font(.system(size: 10))
                     .fontWeight(.heavy)
                     .foregroundColor(.black)
                 Button {
+                    withAnimation(.linear(duration: 0.1)) {
+                        dateManager.selectToday()
+                    }
                     // Action
                 } label: {
                     Text("Today")
@@ -48,5 +54,5 @@ struct DateHeader: View {
 }
 
 #Preview {
-    DateHeader()
+    DateHeader().environmentObject(DateManager())
 }

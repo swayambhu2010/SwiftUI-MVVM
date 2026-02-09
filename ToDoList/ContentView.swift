@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+   
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            VStack {
+                DateHeader()
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView().environmentObject(DateManager())
 }
