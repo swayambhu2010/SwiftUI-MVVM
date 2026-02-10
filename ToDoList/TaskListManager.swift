@@ -28,7 +28,7 @@ class TaskListManager: ObservableObject {
         return items
     }
     
-    private func updateTaskList(task: Task) {
+    func updateTaskList(task: Task) {
         items.append(task)
         refreshTaskList()
     }
