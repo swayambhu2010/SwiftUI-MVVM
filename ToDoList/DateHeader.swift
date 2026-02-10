@@ -11,10 +11,23 @@ struct DateHeader: View {
     @EnvironmentObject var dateManager: DateManager
     
     var body: some View {
-        makeHeaderView()
+        VStack {
+            makeHeaderView()
+            DateSliderView { week in
+                DateView(week: week)
+            }
+            .frame(height: 60, alignment: .top)
+            Divider()
+            HStack {
+                Spacer()
+                Text(dateManager.selectedDate.toString("EEEE,dd.MM.yyyy"))
+                    .font(.system(size: 10, design: .rounded))
+                    .foregroundColor(.gray)
+                
+            }
+        }
     }
     
-    @ViewBuilder
     private func makeHeaderView() -> some View {
         HStack {
             VStack(alignment: .leading) {
