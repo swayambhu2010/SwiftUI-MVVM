@@ -24,9 +24,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		877D7CA62F34C78700FD443E /* SwiftUI_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		877D7CB32F34C78800FD443E /* SwiftUI_MVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_MVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		877D7CBD2F34C78800FD443E /* SwiftUI_MVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_MVVMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		877D7CA62F34C78700FD443E /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		877D7CB32F34C78800FD443E /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		877D7CBD2F34C78800FD443E /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -85,9 +85,9 @@
 		877D7CA72F34C78700FD443E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				877D7CA62F34C78700FD443E /* SwiftUI_MVVM.app */,
-				877D7CB32F34C78800FD443E /* SwiftUI_MVVMTests.xctest */,
-				877D7CBD2F34C78800FD443E /* SwiftUI_MVVMUITests.xctest */,
+				877D7CA62F34C78700FD443E /* ToDoList.app */,
+				877D7CB32F34C78800FD443E /* ToDoListTests.xctest */,
+				877D7CBD2F34C78800FD443E /* ToDoListUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		877D7CA52F34C78700FD443E /* SwiftUI_MVVM */ = {
+		877D7CA52F34C78700FD443E /* ToDoList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 877D7CC72F34C78800FD443E /* Build configuration list for PBXNativeTarget "SwiftUI_MVVM" */;
+			buildConfigurationList = 877D7CC72F34C78800FD443E /* Build configuration list for PBXNativeTarget "ToDoList" */;
 			buildPhases = (
 				877D7CA22F34C78700FD443E /* Sources */,
 				877D7CA32F34C78700FD443E /* Frameworks */,
@@ -110,16 +110,16 @@
 			fileSystemSynchronizedGroups = (
 				877D7CA82F34C78700FD443E /* ToDoList */,
 			);
-			name = SwiftUI_MVVM;
+			name = ToDoList;
 			packageProductDependencies = (
 			);
 			productName = SwiftUI_MVVM;
-			productReference = 877D7CA62F34C78700FD443E /* SwiftUI_MVVM.app */;
+			productReference = 877D7CA62F34C78700FD443E /* ToDoList.app */;
 			productType = "com.apple.product-type.application";
 		};
-		877D7CB22F34C78800FD443E /* SwiftUI_MVVMTests */ = {
+		877D7CB22F34C78800FD443E /* ToDoListTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 877D7CCA2F34C78800FD443E /* Build configuration list for PBXNativeTarget "SwiftUI_MVVMTests" */;
+			buildConfigurationList = 877D7CCA2F34C78800FD443E /* Build configuration list for PBXNativeTarget "ToDoListTests" */;
 			buildPhases = (
 				877D7CAF2F34C78800FD443E /* Sources */,
 				877D7CB02F34C78800FD443E /* Frameworks */,
@@ -133,16 +133,16 @@
 			fileSystemSynchronizedGroups = (
 				877D7CB62F34C78800FD443E /* ToDoListTests */,
 			);
-			name = SwiftUI_MVVMTests;
+			name = ToDoListTests;
 			packageProductDependencies = (
 			);
 			productName = SwiftUI_MVVMTests;
-			productReference = 877D7CB32F34C78800FD443E /* SwiftUI_MVVMTests.xctest */;
+			productReference = 877D7CB32F34C78800FD443E /* ToDoListTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		877D7CBC2F34C78800FD443E /* SwiftUI_MVVMUITests */ = {
+		877D7CBC2F34C78800FD443E /* ToDoListUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 877D7CCD2F34C78800FD443E /* Build configuration list for PBXNativeTarget "SwiftUI_MVVMUITests" */;
+			buildConfigurationList = 877D7CCD2F34C78800FD443E /* Build configuration list for PBXNativeTarget "ToDoListUITests" */;
 			buildPhases = (
 				877D7CB92F34C78800FD443E /* Sources */,
 				877D7CBA2F34C78800FD443E /* Frameworks */,
@@ -156,11 +156,11 @@
 			fileSystemSynchronizedGroups = (
 				877D7CC02F34C78800FD443E /* ToDoListUITests */,
 			);
-			name = SwiftUI_MVVMUITests;
+			name = ToDoListUITests;
 			packageProductDependencies = (
 			);
 			productName = SwiftUI_MVVMUITests;
-			productReference = 877D7CBD2F34C78800FD443E /* SwiftUI_MVVMUITests.xctest */;
+			productReference = 877D7CBD2F34C78800FD443E /* ToDoListUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 877D7CA12F34C78700FD443E /* Build configuration list for PBXProject "SwiftUI_MVVM" */;
+			buildConfigurationList = 877D7CA12F34C78700FD443E /* Build configuration list for PBXProject "ToDoList" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				877D7CA52F34C78700FD443E /* SwiftUI_MVVM */,
-				877D7CB22F34C78800FD443E /* SwiftUI_MVVMTests */,
-				877D7CBC2F34C78800FD443E /* SwiftUI_MVVMUITests */,
+				877D7CA52F34C78700FD443E /* ToDoList */,
+				877D7CB22F34C78800FD443E /* ToDoListTests */,
+				877D7CBC2F34C78800FD443E /* ToDoListUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		877D7CB52F34C78800FD443E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 877D7CA52F34C78700FD443E /* SwiftUI_MVVM */;
+			target = 877D7CA52F34C78700FD443E /* ToDoList */;
 			targetProxy = 877D7CB42F34C78800FD443E /* PBXContainerItemProxy */;
 		};
 		877D7CBF2F34C78800FD443E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 877D7CA52F34C78700FD443E /* SwiftUI_MVVM */;
+			target = 877D7CA52F34C78700FD443E /* ToDoList */;
 			targetProxy = 877D7CBE2F34C78800FD443E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -533,7 +533,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		877D7CA12F34C78700FD443E /* Build configuration list for PBXProject "SwiftUI_MVVM" */ = {
+		877D7CA12F34C78700FD443E /* Build configuration list for PBXProject "ToDoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				877D7CC52F34C78800FD443E /* Debug */,
@@ -542,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		877D7CC72F34C78800FD443E /* Build configuration list for PBXNativeTarget "SwiftUI_MVVM" */ = {
+		877D7CC72F34C78800FD443E /* Build configuration list for PBXNativeTarget "ToDoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				877D7CC82F34C78800FD443E /* Debug */,
@@ -551,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		877D7CCA2F34C78800FD443E /* Build configuration list for PBXNativeTarget "SwiftUI_MVVMTests" */ = {
+		877D7CCA2F34C78800FD443E /* Build configuration list for PBXNativeTarget "ToDoListTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				877D7CCB2F34C78800FD443E /* Debug */,
@@ -560,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		877D7CCD2F34C78800FD443E /* Build configuration list for PBXNativeTarget "SwiftUI_MVVMUITests" */ = {
+		877D7CCD2F34C78800FD443E /* Build configuration list for PBXNativeTarget "ToDoListUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				877D7CCE2F34C78800FD443E /* Debug */,
