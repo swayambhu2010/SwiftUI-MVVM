@@ -33,13 +33,13 @@ class TaskListManager: ObservableObject {
         refreshTaskList()
     }
     
-    private func deleteTask(task: Task) {
+    func deleteTask(task: Task) {
         let index = items.firstIndex(of: task) ?? 0
         items.remove(at: index)
         refreshTaskList()
     }
     
-    private func toggleTaskCompletion(task: Task) {
+    func toggleTaskCompletion(task: Task) {
         let index = items.firstIndex(of: task) ?? 0
         items[index].isCompleted.toggle()
         refreshTaskList()

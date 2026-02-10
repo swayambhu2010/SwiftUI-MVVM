@@ -20,7 +20,18 @@ struct TaskListView: View {
     }
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ForEach(currentDateTaks) { task in
+                TaskListItem(task: task)
+                    .background(alignment: .leading) {
+                        if currentDateTaks.last?.id != task.id {
+                            Rectangle().frame(width: 1)
+                                .offset(x: 12, y: 20)
+                        }
+                    }
+            }
+        }
+        .padding(.top, 15)
     }
     
     func getCurrentDateTask() -> [Task] {
