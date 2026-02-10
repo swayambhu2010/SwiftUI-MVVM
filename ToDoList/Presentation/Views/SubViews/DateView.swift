@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DateView: View {
-    @EnvironmentObject var weekManger: DateManager
+    @ObservedObject var viewModel: TaskPageViewModel
     var week: WeekModel
     
     var body: some View {
@@ -35,7 +35,7 @@ struct DateView: View {
                 .clipShape(.rect(cornerRadius: 10))
                 .onTapGesture {
                     withAnimation(.linear(duration: 0.1)) {
-                        weekManger.selectedDate = week.dates[i]
+                        viewModel.selectTheDay(with: week.dates[i])
                     }
                 }
             }
@@ -44,12 +44,5 @@ struct DateView: View {
 }
 
 #Preview {
-    DateView(week: .init(index: 1, dates: [Date().yesterday.yesterday.yesterday,
-         Date().yesterday.yesterday,
-         Date().yesterday,
-         Date(),
-         Date().tomorrow,
-         Date().tomorrow.tomorrow,
-         Date().tomorrow.tomorrow.tomorrow], referenceDate: Date()))
-    .environmentObject(DateManager())
+    TaskHomePage()
 }

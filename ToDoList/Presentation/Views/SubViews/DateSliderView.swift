@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DateSliderView<DateViewContent: View>: View {
     
-    @EnvironmentObject var dateManager: DateManager
+    @ObservedObject var viewModel: TaskPageViewModel
     @State private var activeTab: Int = 1
     @State private var position = CGSize.zero
     @GestureState private var dragOffSet =  CGSize.zero
@@ -17,26 +17,27 @@ struct DateSliderView<DateViewContent: View>: View {
     
     let dateViewContent: (_ week: WeekModel) -> DateViewContent
     
-    init(dateViewContent: @escaping (_ week: WeekModel) -> DateViewContent) {
+    init(viewModel: TaskPageViewModel, dateViewContent: @escaping (_ week: WeekModel) -> DateViewContent) {
+        self.viewModel = viewModel
         self.dateViewContent = dateViewContent
     }
     
     var body: some View {
         TabView(selection: $activeTab) {
-            dateViewContent(dateManager.weeks[0])
+            dateViewContent(viewModel.weeks[0])
                 .frame(maxWidth: .infinity)
                 .tag(0)
-            dateViewContent(dateManager.weeks[1])
+            dateViewContent(viewModel.weeks[1])
                 .frame(maxWidth: .infinity)
                 .tag(1)
                 .onDisappear() {
                     guard direction != .unknown else { return }
-                    dateManager.update(to: direction)
+                    viewModel.onDateScrolled(to: direction)
                     // To keep the displayed week as current week
                     direction = .unknown
                     activeTab = 1
                 }
-            dateViewContent(dateManager.weeks[2])
+            dateViewContent(viewModel.weeks[2])
                 .frame(maxWidth: .infinity)
                 .tag(2)
         }
@@ -52,7 +53,5 @@ struct DateSliderView<DateViewContent: View>: View {
 }
 
 #Preview {
-    DateSliderView { week in
-        DateView(week: week)
-    }.environmentObject(DateManager())
+    TaskHomePage()
 }

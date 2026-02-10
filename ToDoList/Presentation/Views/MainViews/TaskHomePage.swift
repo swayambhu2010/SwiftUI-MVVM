@@ -10,15 +10,35 @@ import SwiftUI
 struct TaskHomePage: View {
     
     @State private var createNewTask: Bool = false
-    @EnvironmentObject var dateManager: DateManager
-    @EnvironmentObject var taskListManager: TaskListManager
+    @StateObject private var viewModel: TaskPageViewModel
+    
+    init() {
+        let dateUseCase = DateUseCase(
+            dateRepository: DateRepository(
+                dateProvider: DateDataProvider()
+            )
+        )
+        
+        let taskUseCase = TaskUseCase(
+            taskRepository: TaskRepository(
+                taskProvider: TaskDataProvider()
+            )
+        )
+        
+        _viewModel = StateObject(
+            wrappedValue: TaskPageViewModel(
+                dateUseCase: dateUseCase,
+                taskUseCase: taskUseCase
+            )
+        )
+    }
     
     var body: some View {
         VStack {
-            DateHeader()
+            DateHeader(viewModel: viewModel)
             ScrollView(.vertical) {
                 VStack {
-                    TaskListView(date: $dateManager.selectedDate, items: $taskListManager.items)
+                    TaskListView(viewModel: viewModel)
                 }
             }
             .scrollIndicators(.hidden)
@@ -38,12 +58,13 @@ struct TaskHomePage: View {
             }
         }
         .sheet(isPresented: $createNewTask) {
-            NewTaskView().presentationDetents([.fraction(0.4)])
+            NewTaskView() { task in
+                viewModel.updateTaskList(task: task)
+            }.presentationDetents([.fraction(0.4)])
         }
     }
 }
 
 #Preview {
-    TaskHomePage().environmentObject(DateManager())
-        .environmentObject(TaskListManager())
+    TaskHomePage()
 }

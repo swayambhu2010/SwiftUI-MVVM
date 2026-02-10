@@ -10,13 +10,9 @@ import SwiftUI
 @main
 struct TODOList: App {
     
-    @StateObject var dateManager = DateManager()
-    @StateObject var taskListManager = TaskListManager()
-    
     var body: some Scene {
         WindowGroup {
-            TaskHomePage().environmentObject(dateManager)
-                         .environmentObject(taskListManager)
+            TaskHomePage()
         }
     }
 }

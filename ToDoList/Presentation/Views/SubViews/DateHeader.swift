@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct DateHeader: View {
-    @EnvironmentObject var dateManager: DateManager
+    @ObservedObject var viewModel: TaskPageViewModel
     
     var body: some View {
         VStack {
             makeHeaderView()
-            DateSliderView { week in
-                DateView(week: week)
+            DateSliderView(viewModel: viewModel) { week in
+                DateView(viewModel: viewModel, week: week)
             }
             .frame(height: 60, alignment: .top)
             Divider()
             HStack {
                 Spacer()
-                Text(dateManager.selectedDate.toString("EEEE,dd.MM.yyyy"))
+                Text(viewModel.selectedDate.toString("EEEE,dd.MM.yyyy"))
                     .font(.system(size: 10, design: .rounded))
                     .foregroundColor(.gray)
                 
@@ -35,7 +35,7 @@ struct DateHeader: View {
                     .font(.title)
                     .fontWeight(.semibold)
                     .padding(4)
-                Text(dateManager.selectedDate == Calendar.current.startOfDay(for: Date()) ? "What's up for today?" : "planning for future?")
+                Text(viewModel.getSelectedDate() == Calendar.current.startOfDay(for: Date()) ? "What's up for today?" : "planning for future?")
                     .font(.caption)
                     .fontWeight(.light)
                     .padding(4)
@@ -43,13 +43,13 @@ struct DateHeader: View {
             }
             Spacer()
             VStack(alignment: .trailing) {
-                Text(dateManager.selectedDate.monthToString())
+                Text(viewModel.getSelectedDate().monthToString())
                     .font(.system(size: 10))
                     .fontWeight(.heavy)
                     .foregroundColor(.black)
                 Button {
                     withAnimation(.linear(duration: 0.1)) {
-                        dateManager.selectToday()
+                        viewModel.selectTheDay(with: Date())
                     }
                     // Action
                 } label: {
@@ -67,5 +67,5 @@ struct DateHeader: View {
 }
 
 #Preview {
-    DateHeader().environmentObject(DateManager())
+    TaskHomePage()
 }

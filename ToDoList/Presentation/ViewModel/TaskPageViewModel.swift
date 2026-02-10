@@ -49,6 +49,8 @@ class TaskPageViewModel: TaskPageViewModelProtocol {
         self.dateUseCase = dateUseCase
         self.taskUseCase = taskUseCase
         self.selectedDate = Calendar.current.startOfDay(for: date)
+        // The above line should take care of this right?
+        calcPastFutureWeeks(with: selectedDate)
         self.items = taskUseCase.getTaskList()
     }
     
