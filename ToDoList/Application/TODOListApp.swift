@@ -15,7 +15,7 @@ struct TODOList: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(dateManager)
+            TaskHomePage().environmentObject(dateManager)
                          .environmentObject(taskListManager)
         }
     }
