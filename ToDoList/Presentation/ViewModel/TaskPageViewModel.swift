@@ -8,10 +8,6 @@
 import Foundation
 import Combine
 
-struct TaskPageConstants {
-    
-}
-
 enum SliderTimeDirection {
     case future
     case past
@@ -31,12 +27,11 @@ protocol TaskPageViewModelOutputProtocol {
     func getCurrentSelectedDataTask() -> [Task]
 }
 
-protocol TaskPageViewModelProtocol: ObservableObject, TaskPageViewModelInputProtocol, TaskPageViewModelOutputProtocol {}
-
-class TaskPageViewModel: TaskPageViewModelProtocol {
+class TaskPageViewModel: ObservableObject, TaskPageViewModelInputProtocol, TaskPageViewModelOutputProtocol {
    
     private let dateUseCase: DateUseCaseProtocol
     private let taskUseCase: TaskUseCaseProtocol
+    // Where is the subscriber??
     @Published var items: [Task] = []
     @Published var weeks: [WeekModel] = []
     @Published var selectedDate: Date {
